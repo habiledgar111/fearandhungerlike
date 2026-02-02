@@ -66,26 +66,26 @@ public class FirstScreen implements Screen {
     Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 
-    if (Gdx.input.isKeyJustPressed(Input.Keys.I)) {
-      for (int i = 1; i <= 3; i++) {
-        Entity item = factory.createItem(("Item - " + i), randomItemType(), ((int) (Math.random() * 20)));
-        equipItem(player, item);
-      }
-    }
+    // if (Gdx.input.isKeyJustPressed(Input.Keys.I)) {
+    //   for (int i = 1; i <= 3; i++) {
+    //     Entity item = factory.createItem(("Item - " + i), randomItemType(), ((int) (Math.random() * 20)));
+    //     equipItem(player, item);
+    //   }
+    // }
 
-    if (Gdx.input.isKeyJustPressed(Input.Keys.O)) {
-      InventoryComponent inventoryComponent = player.getComponent(InventoryComponent.class);
-      int random = (int) Math.random() * inventoryComponent.inventory.size;
-      Entity item = inventoryComponent.inventory.get(random);
-      unEquipItem(player, item);
-    }
+    // if (Gdx.input.isKeyJustPressed(Input.Keys.O)) {
+    //   InventoryComponent inventoryComponent = player.getComponent(InventoryComponent.class);
+    //   int random = (int) Math.random() * inventoryComponent.inventory.size;
+    //   Entity item = inventoryComponent.inventory.get(random);
+    //   unEquipItem(player, item);
+    // }
 
     engine.update(delta);
   }
 
-  private ItemComponent.type randomItemType() {
-    return ItemComponent.type.values()[(int) (Math.random() * ItemComponent.type.values().length)];
-  }
+  // private ItemComponent.type randomItemType() {
+  //   return ItemComponent.type.values()[(int) (Math.random() * ItemComponent.type.values().length)];
+  // }
 
   @Override
   public void resize(int width, int height) {
@@ -119,24 +119,24 @@ public class FirstScreen implements Screen {
     // Destroy screen's assets here.
   }
 
-  private void equipItem(Entity user, Entity item) {
+  // private void equipItem(Entity user, Entity item) {
 
-    user.getComponent(InventoryComponent.class).inventory.add(item);
+  //   user.getComponent(InventoryComponent.class).inventory.add(item);
 
-    user.add(engine.createComponent(DirtyStatComponent.class));
-    System.out.println("berhasil equip item");
-  }
+  //   user.add(engine.createComponent(DirtyStatComponent.class));
+  //   System.out.println("berhasil equip item");
+  // }
 
-  private void unEquipItem(Entity user, Entity item) {
+  // private void unEquipItem(Entity user, Entity item) {
 
-    boolean isUnEquip = user.getComponent(InventoryComponent.class).inventory.removeValue(item, false);
+  //   boolean isUnEquip = user.getComponent(InventoryComponent.class).inventory.removeValue(item, false);
 
-    if (isUnEquip) {
-      System.out.println("berhasil unequip item");
-      user.add(engine.createComponent(DirtyStatComponent.class));
-      return;
-    }
-    System.out.println("gagal unequip item");
-  }
+  //   if (isUnEquip) {
+  //     System.out.println("berhasil unequip item");
+  //     user.add(engine.createComponent(DirtyStatComponent.class));
+  //     return;
+  //   }
+  //   System.out.println("gagal unequip item");
+  // }
 
 }

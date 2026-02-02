@@ -104,7 +104,16 @@ public class EntityFactory {
     itemComponent.typeItem = type;
     itemComponent.name = name;
 
+    RenderComponent icon = engine.createComponent(RenderComponent.class);
+    icon.glyph = EntitySymbol.ITEM;
+
     item.add(itemComponent);
+    item.add(icon);
+
+    CoordinateComponent coor = engine.createComponent(CoordinateComponent.class);
+    item.add(coor);
+
+    
     engine.addEntity(item);
 
     return item;

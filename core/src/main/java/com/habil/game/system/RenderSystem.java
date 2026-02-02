@@ -44,7 +44,7 @@ public class RenderSystem extends EntitySystem {
   public void addedToEngine(Engine engine) {
     entities = engine.getEntitiesFor(
         Family.all(CoordinateComponent.class, RenderComponent.class).get());
-    worldGenerator.spawnMonster(map, engine, factory, 5);
+    worldGenerator.spawnMonster(map, engine, factory, 2);
   }
 
   @Override

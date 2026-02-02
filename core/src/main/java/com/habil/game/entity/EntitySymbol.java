@@ -4,7 +4,8 @@ import com.badlogic.gdx.graphics.Color;
 
 public enum EntitySymbol {
   PLAYER('@',Color.YELLOW),
-  MONSTER('M',Color.RED);
+  MONSTER('M',Color.RED),
+  ITEM('$',Color.GOLD);
 
   public final char glyph;
   public final Color color;
