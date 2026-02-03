@@ -39,7 +39,7 @@ public class EntityFactory {
 
   private StatComponent randomStatEnemy(int difficultLevel) {
     StatComponent sc = engine.createComponent(StatComponent.class);
-    int totalPoint = 20 * difficultLevel;
+    int totalPoint = (int) (20 * difficultLevel * 0.7);
     int[] points = new int[4];
     for (int i = 0; i < totalPoint; i++) {
       int randomIndex = (int) Math.random() * 4;

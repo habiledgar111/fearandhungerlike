@@ -2,14 +2,12 @@ package com.habil.game.map;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import com.badlogic.ashley.core.ComponentMapper;
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.habil.game.component.CoordinateComponent;
 import com.habil.game.component.ItemComponent;
-import com.habil.game.component.ItemComponent.type;
 import com.habil.game.entity.EntityFactory;
 import com.habil.game.lib.FastNoiseLite;
 
@@ -129,7 +127,7 @@ public class WorldGenerator {
       int index = rng.nextInt(walkableTiles.size());
       int[] pos = walkableTiles.remove(index);
       ItemComponent type = new ItemComponent();
-      Entity item = factory.createItem("item-"+index, type.randomType(), 9);
+      Entity item = factory.createItem("item-"+index, type.randomType(), (int) (rareLevel * 1.5));
 
       CoordinateComponent coor = cm.get(item);
 

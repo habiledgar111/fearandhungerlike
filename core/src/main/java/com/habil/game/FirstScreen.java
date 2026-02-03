@@ -19,6 +19,7 @@ import com.habil.game.system.BattleSystem;
 import com.habil.game.system.EngageSystem;
 import com.habil.game.system.HealthSystem;
 import com.habil.game.system.InputSystem;
+import com.habil.game.system.PickUpSystem;
 import com.habil.game.system.RenderSystem;
 import com.habil.game.system.StatSystem;
 
@@ -57,6 +58,7 @@ public class FirstScreen implements Screen {
 
     engine.addSystem(new BattleSystem(player));
     engine.addSystem(new EngageSystem());
+    engine.addSystem(new PickUpSystem());
   }
 
   @Override
